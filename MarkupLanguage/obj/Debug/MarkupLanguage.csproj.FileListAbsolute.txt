@@ -1,0 +1,7 @@
+C:\Users\karar\Desktop\FDR\MarkupLanguage\MarkupLanguage\bin\Debug\Library\Newtonsoft.Json.dll
+C:\Users\karar\Desktop\FDR\MarkupLanguage\MarkupLanguage\bin\Debug\MarkupLanguage.dll
+C:\Users\karar\Desktop\FDR\MarkupLanguage\MarkupLanguage\bin\Debug\MarkupLanguage.pdb
+C:\Users\karar\Desktop\FDR\MarkupLanguage\MarkupLanguage\bin\Debug\Newtonsoft.Json.dll
+C:\Users\karar\Desktop\FDR\MarkupLanguage\MarkupLanguage\obj\Debug\MarkupLanguage.dll
+C:\Users\karar\Desktop\FDR\MarkupLanguage\MarkupLanguage\obj\Debug\MarkupLanguage.pdb
+C:\Users\karar\Desktop\FDR\MarkupLanguage\MarkupLanguage\obj\Debug\MarkupLanguage.csprojResolveAssemblyReference.cache

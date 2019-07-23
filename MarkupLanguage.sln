@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkupLanguage", "MarkupLanguage\MarkupLanguage.csproj", "{3EEA566A-777C-4AFC-A1FD-0A5A4CD8677E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{A5C560ED-E1EE-4A98-9D3A-CB83C4A8141A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{96C94371-4FF4-4E40-81C0-F9EA3ED23D93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EEA566A-777C-4AFC-A1FD-0A5A4CD8677E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EEA566A-777C-4AFC-A1FD-0A5A4CD8677E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EEA566A-777C-4AFC-A1FD-0A5A4CD8677E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EEA566A-777C-4AFC-A1FD-0A5A4CD8677E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C560ED-E1EE-4A98-9D3A-CB83C4A8141A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C560ED-E1EE-4A98-9D3A-CB83C4A8141A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C560ED-E1EE-4A98-9D3A-CB83C4A8141A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C560ED-E1EE-4A98-9D3A-CB83C4A8141A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C94371-4FF4-4E40-81C0-F9EA3ED23D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C94371-4FF4-4E40-81C0-F9EA3ED23D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C94371-4FF4-4E40-81C0-F9EA3ED23D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C94371-4FF4-4E40-81C0-F9EA3ED23D93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
