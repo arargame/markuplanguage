@@ -59,7 +59,7 @@ namespace MarkupLanguage.Html.Attributes
 
             SetAttributeType(type);
 
-            SetHtmlAttributeGroup(group);
+            SetAttributeGroup(group);
         }
 
         public HtmlAttribute SetProperty(string property)

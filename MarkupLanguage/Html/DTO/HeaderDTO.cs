@@ -15,7 +15,7 @@ namespace MarkupLanguage.Html.DTO
 
     public class HeaderDTO : MarkupLanguageObject
     {
-        public object Value { get; set; }
+        //public object Value { get; set; }
 
         public TableDTO Table { get; set; }
 
@@ -35,11 +35,11 @@ namespace MarkupLanguage.Html.DTO
 
         public SortDirection SortDirection { get; set; }
 
-        public HeaderDTO()
-        {
-            IsSelectable = IsSortable = IsSearchable = Visible = true;
-            SortDirection = SortDirection.Descending;        
-        }
+        //public HeaderDTO()
+        //{
+        //    IsSelectable = IsSortable = IsSearchable = Visible = true;
+        //    SortDirection = SortDirection.Descending;        
+        //}
 
         public HeaderDTO(string name, bool isSorting = false, SortDirection sortDirection = DTO.SortDirection.Ascending)
         {

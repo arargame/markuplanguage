@@ -10,11 +10,27 @@ namespace MarkupLanguage.Html.DTO
     {
         public TableDTO Table { get; set; }
 
-        public object Value { get; set; }
+        //public object Value { get; set; }
 
-        public RowDTO(object value)
+        public List<ColumnDTO> Columns { get; set; }
+        
+        public RowDTO()
         {
-            Value = value;
+            //Value = value;
+
+            Columns = new List<ColumnDTO>();
+        }
+
+        public RowDTO AddColumns(params ColumnDTO[] columns)
+        {
+            Columns.AddRange(columns);
+
+            foreach (var column in columns)
+            {
+                column.Row = this;
+            }
+
+            return this;
         }
     }
 }

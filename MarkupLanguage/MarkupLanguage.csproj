@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Html\Attributes\HtmlName.cs" />
     <Compile Include="Html\DataTable.cs" />
+    <Compile Include="Html\DTO\ColumnDTO.cs" />
     <Compile Include="Html\DTO\HeaderDTO.cs" />
     <Compile Include="Html\DTO\RowDTO.cs" />
     <Compile Include="Html\DTO\TableDTO.cs" />

@@ -40,8 +40,10 @@
 <script>
 
     var datatable = {
-        Json:"",
-        OrderedColumn:""
+        OuterHtml : "",
+        Columns : "",
+        ColumnsCount : 0,
+        CurrentPage : 1
     };
 
     var objectToSend = {
@@ -68,11 +70,18 @@
             success: function (response) {
                 console.log(response);
 
-                var obj = jQuery.parseJSON(response.Json);
-                console.log(obj);
+                datatable = response;
+
+                console.log("here : "+datatable);
+
+                //datatable.Columns = response.Columns;
+                //datatable.ColumnsCount = response.ColumnsCount;
+
+                //var obj = jQuery.parseJSON(response.Json);
+                console.log(datatable.Columns[2].Name);
                 //datatable.Json = response.Json;
 
-                $("#MyTable").append(obj.OuterHtml);
+                $("#MyTable").append(response.OuterHtml);
                // objectToSend.Thead = obj.Thead.OuterHtml
             },
             error: function (response) {
@@ -84,27 +93,64 @@
     
     $("#MyTable").on("click", "table thead tr th", function () {
 
-        datatable.OrderedColumn = "SecondColumn";
-
-        console.log(objectToSend);
+        console.log($(this).text());
 
         $.ajax({
             url: '/Home/Get/',
             type: 'POST',
-            data: objectToSend,
+            data: datatable,
             dataType: 'json',
            // contentType: 'application/json',
             success: function (response) {
                 console.log(response);
-                var obj = jQuery.parseJSON(response.Json);
-                //console.log(obj);
-                $("#MyTable").append(obj.OuterHtml);
+
+                $("#MyTable").append(response.OuterHtml);
             },
             error: function (response) {
                 console.log(response);
             }
         });
     });
+
+
+    $("#MyTable").on("click", "ul.pagination li a", function (event) {
+
+        event.preventDefault();
+
+        console.log($(this).text());
+
+        datatable.CurrentPage = $(this).text();
+
+        PostDataTable('/Home/Get', datatable, function (response) {
+            console.log("hellow" + response);
+        });
+
+        //$.ajax({
+        //    url: '/Home/Get',
+        //    type: 'POST',
+        //    data: datatable,
+        //    datatype: 'json',
+        //    success: function (response) {
+        //        console.log(response);
+        //    },
+        //    error:function(response){
+        //        console.log(response);
+        //    }
+        //});
+
+    });
+
+    var PostDataTable = function (url, data, success, error) {
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            datatype: 'json',
+            success: success,
+            error: error
+        });
+    };
 
     $("#MyTable").on("keyup", "input", delay(function (e) {
         console.log('Time elapsed!', this.value);

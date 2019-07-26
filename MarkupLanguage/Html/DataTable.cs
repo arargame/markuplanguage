@@ -25,9 +25,7 @@ namespace MarkupLanguage.Html
 
         public DataTable(int pageNumber, string searchText, TableDTO tableDTO)
         {
-            var te = new TableElement();
-
-            TableDiv = TableElement.ObjectToAdvancedTableElement(tableDTO.Headers.Select(h => h.Name).ToList(), tableDTO.Rows.Select(r => r.Value.ToString()).ToList());
+            TableDiv = TableElement.ObjectToAdvancedTableElement(tableDTO.Headers, tableDTO.Rows);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarkupLanguage.Html.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,19 +42,30 @@ namespace MarkupLanguage.Html.Elements
             }
         }
 
-        public static TableElement ObjectToTableElement(List<string> headers, List<string> rows)
+        public static TableElement ObjectToTableElement(List<HeaderDTO> headers, List<RowDTO> rows)
         {
             var table = new TableElement();
 
-            var ths = headers.Select(h => new HtmlElement("th").SetInnerText(h)).ToArray();
+            var ths = headers.Select(h => new HtmlElement("th").SetInnerText(h.Name)).ToArray();
             
             table.Thead.AddChildren(new HtmlElement("tr").AddChildren(ths));
-            table.Tbody.AddChildren(new HtmlElement("tr"));
+
+            foreach (var row in rows)
+            {
+                var tr = new HtmlElement("tr");
+
+                table.Tbody.AddChildren(tr);
+
+                foreach (var column in row.Columns)
+                {
+                    tr.AddChildren(new HtmlElement("td").SetInnerText(column.Value.ToString()));
+                }
+            }
 
             return table;
         }
 
-        public static HtmlElement ObjectToAdvancedTableElement(List<string> headers, List<string> rows,int page=1)
+        public static HtmlElement ObjectToAdvancedTableElement(List<HeaderDTO> headers, List<RowDTO> rows,int page=1)
         {
             var table = ObjectToTableElement(headers, rows);
 
@@ -61,13 +73,14 @@ namespace MarkupLanguage.Html.Elements
 
             table.Thead.DescendantsByTag("th")
                         .ForEach(th => th.AddStyle("cursor", "pointer")
-                                            .AddChildren(new HtmlElement("span").AddStyle("float", "right")
+                                            .AddChildren(new HtmlElement("i").AddStyle("float", "right")
                                                                                 .AddStyle("color", "grey")
-                                                                                .AddClass("glyphicon glyphicon-sort")));
+                                                                                .AddStyle("line-height", "normal")
+                                                                                .AddStyle("line-height","1.6")
+                                                                                .AddClass("fas fa-sort-amount-down")));
+            
 
-            table.TbodyRows.ForEach(tr => tr.AddChildren(new HtmlElement("td").SetInnerText("column1"), new HtmlElement("td").SetInnerText("column2")));
-
-            var size = 10;
+            var size = 2;
 
             var recordCount = table.TbodyRows.Count;
 

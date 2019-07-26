@@ -15,14 +15,14 @@ namespace TestApp
     {
         static void Main(string[] args)
         {
-            var te = TableElement.ObjectToAdvancedTableElement(new[] { "column1", "column2" }.ToList(), new[] { "row1", "row2" }.ToList());
+            //var te = TableElement.ObjectToAdvancedTableElement(new[] { "column1", "column2" }.ToList(), new[] { "row1", "row2" }.ToList());
 
-            var json = JsonConvert.SerializeObject(te, Formatting.Indented, new JsonSerializerSettings
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });
+            //var json = JsonConvert.SerializeObject(te, Formatting.Indented, new JsonSerializerSettings
+            //{
+            //    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            //});
 
-            var ggg = te.ToString();
+            //var ggg = te.ToString();
             HtmlElement element = new HtmlElement("MyTag");
 
             element.AddAttributes(new HtmlStyle("background-color", "powderblue"),

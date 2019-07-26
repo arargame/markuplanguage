@@ -25,7 +25,12 @@ namespace WebApplication1
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/fontawesome.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/fontawesome").Include(
+                        "~/Scripts/fontawesome/fontawesome.js"));
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace MarkupLanguage.Html.Attributes
         public HtmlId(string value)
             : base("id", value)
         {
-
+            SetAttributeGroup(HtmlAttributeGroup.Id);
         }
     }
 }
